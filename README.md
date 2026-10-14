@@ -10,8 +10,8 @@ cheetah-configuration.yaml
 + put in your own wallet address on line 7
 + block starting at line 53, enter your own worker names and numeric id's. (See below)
 + Add code from configuration-cheetah.yaml to your Home assistant configuration.yaml
-
-The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
++ RESTART HOME ASSISTANT
++ The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
 
 GETTING WORKER ID's
 -------------------
