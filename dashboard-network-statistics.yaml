@@ -1,4 +1,4 @@
-#monitoring for Cheetah, Bitcoin Cash and Bitcoin
+#monitoring for Cheetah, Digibyte, Bitcoin Cash and Bitcoin
 type: vertical-stack
 cards:
   - type: heading
@@ -62,5 +62,26 @@ cards:
         name: Reward USD
         icon: mdi:cash
       - entity: sensor.btc_price_change_24h
+        name: Price Change (24h)
+        icon: mdi:chart-line
+    - type: heading
+    heading: Bitcoin
+    heading_style: title
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - entity: sensor.digibyte
+        name: Coin
+        icon: mdi:currency-usd
+      - entity: sensor.dgb_network_difficulty
+        name: Network Difficulty
+        icon: mdi:gauge
+      - entity: sensor.dgb_block_reward
+        name: Block Reward
+        icon: mdi:cube-outline
+      - entity: sensor.dgb_reward_usd
+        name: Reward USD
+        icon: mdi:cash
+      - entity: sensor.dgb_price_change_24h
         name: Price Change (24h)
         icon: mdi:chart-line
