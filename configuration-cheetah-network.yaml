@@ -1,4 +1,3 @@
-
   # HeliosPool CHTA Network Statistics
   - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=chta"
     scan_interval: 60
