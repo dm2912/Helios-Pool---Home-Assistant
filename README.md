@@ -6,7 +6,7 @@ So far only done for Cheetah
 
 CHEETAH COIN
 ------------
-configuration-cheetah.yaml
+cheetah-configuration.yaml
 + put in your own wallet address on line 7
 + block starting at line 53, enter your own worker names and numeric id's. (See below)
 + Add code from configuration-cheetah.yaml to your Home assistant configuration.yaml
