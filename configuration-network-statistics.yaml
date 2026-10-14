@@ -58,7 +58,7 @@ rest:
         unique_id: bch_network_block_reward
         value_template: >
           {{ value_json.block_reward | float(0) | round(2) }}
-        unit_of_measurement: "CHTA"
+        unit_of_measurement: "BCH"
         icon: mdi:cube-outline
 
       - name: "BCH Reward USD"
@@ -96,7 +96,7 @@ rest:
         unique_id: btc_network_block_reward
         value_template: >
           {{ value_json.block_reward | float(0) | round(2) }}
-        unit_of_measurement: "CHTA"
+        unit_of_measurement: "BTC"
         icon: mdi:cube-outline
 
       - name: "BTC Reward USD"
