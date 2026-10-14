@@ -20,4 +20,6 @@ You can get your worker id's etc by going to the heliospool page, for instance h
 
 <img width="1623" height="684" alt="Screenshot_20261014_180114" src="https://github.com/user-attachments/assets/c8eccccd-16cb-483a-9557-6fa550111eed" />
 
+See also the example-helios-data.json file, which shows clearly what data the api gives
+
 NOTE: Initial guidance on how to grab the data from heliospool and build the cards was assisted by ChatGPT. The rest is me
