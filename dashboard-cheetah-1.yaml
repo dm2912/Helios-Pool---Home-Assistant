@@ -1,31 +1,38 @@
-# First dashboard panel for Cheetah mining
-
 type: vertical-stack
-grid_options:
-  columns: 12
 cards:
-  - type: heading
-    heading: Cheetah Mining
-    heading_style: title
-  - type: tile
-    entity: sensor.chta_active_workers
-    name: Active workers
-    icon: mdi:chip
-  - type: glance
-    show_name: true
-    show_state: true
-    entities:
-      - entity: sensor.chta_hashrate_5m
-        name: 5-minute
-      - entity: sensor.chta_hashrate_1h
-        name: 1-hour
-      - entity: sensor.chta_hashrate_24h
-        name: 24-hour
-      - entity: sensor.chta_hashrate_7d
-        name: 7-day
-  - type: history-graph
-    title: Hashrate history
-    hours_to_show: 12
-    entities:
-      - entity: sensor.chta_hashrate_5m
-        name: Current hashrate
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading: Network Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.chta_coin
+            name: Coin
+            icon: mdi:currency-usd
+          - entity: sensor.chta_network_difficulty
+            name: Network Difficulty
+            icon: mdi:gauge
+          - entity: sensor.chta_block_reward
+            name: Block Reward
+            icon: mdi:cube-outline
+          - entity: sensor.chta_reward_usd
+            name: Reward USD
+            icon: mdi:cash
+          - entity: sensor.chta_price_change_24h
+            name: Price Change (24h)
+            icon: mdi:chart-line
+      - type: heading
+        heading: My Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.chta_active_workers
+            name: Active Workers
+            icon: mdi:chip
+          - entity: sensor.chta_blocks_found
+            name: Blocks Found
+            icon: mdi:cube-outline
+            color: amber
