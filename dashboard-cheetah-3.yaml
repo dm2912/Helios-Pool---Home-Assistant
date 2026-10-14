@@ -1,0 +1,33 @@
+type: vertical-stack
+cards:
+  - type: heading
+    heading: Workers
+    heading_style: title
+  - type: entities
+    title: cyd_orange
+    entities:
+      - type: attribute
+        entity: sensor.chta_worker_orange
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.chta_worker_orange
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.chta_orange_last_seen
+        name: Last Update
+        format: relative
+  - type: entities
+    title: cyd_pink
+    entities:
+      - type: attribute
+        entity: sensor.chta_worker_pink
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.chta_worker_pink
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.chta_pink_last_seen
+        name: Last Update
+        format: relative
