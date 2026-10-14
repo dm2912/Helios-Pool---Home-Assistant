@@ -1,0 +1,31 @@
+# First dashboard panel for Cheetah mining
+
+type: vertical-stack
+grid_options:
+  columns: 12
+cards:
+  - type: heading
+    heading: Cheetah Mining
+    heading_style: title
+  - type: tile
+    entity: sensor.chta_active_workers
+    name: Active workers
+    icon: mdi:chip
+  - type: glance
+    show_name: true
+    show_state: true
+    entities:
+      - entity: sensor.chta_hashrate_5m
+        name: 5-minute
+      - entity: sensor.chta_hashrate_1h
+        name: 1-hour
+      - entity: sensor.chta_hashrate_24h
+        name: 24-hour
+      - entity: sensor.chta_hashrate_7d
+        name: 7-day
+  - type: history-graph
+    title: Hashrate history
+    hours_to_show: 12
+    entities:
+      - entity: sensor.chta_hashrate_5m
+        name: Current hashrate
