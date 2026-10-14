@@ -3,6 +3,7 @@
 # Change your workers to your actual cheetah workers
 
 rest:
+# Edit this line with your own wallet
   - resource: "https://stats-chta.heliospool.com/api/users/CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt"
     scan_interval: 60
     sensor:
@@ -49,7 +50,7 @@ rest:
              | selectattr('hashrate5m', 'gt', 0)
              | list | count }}
 
-      # Worker: cyd_orange
+      # Worker: get your own worker ID from the json
       - name: "CHTA Worker Orange"
         unique_id: chta_worker_orange
         value_template: >
@@ -63,7 +64,7 @@ rest:
           - bestEver
           - lastUpdate
 
-      # Worker: cyd_pink
+      # Worker: get your own worker id from the json
       - name: "CHTA Worker Pink"
         unique_id: chta_worker_pink
         value_template: >
@@ -86,6 +87,8 @@ rest:
              | list | count }}
         icon: mdi:cube-outline
         state_class: measurement
+
+# converting timestamps to "x minutes ago", again, edit in your own workers
 
 template:
   - sensor:
