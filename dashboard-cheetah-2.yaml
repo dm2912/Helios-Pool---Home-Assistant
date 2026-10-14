@@ -1,40 +1,23 @@
-# Second dashboard panel for Cheetah showing workers stats
-
 type: vertical-stack
 cards:
   - type: heading
-    heading: Workers
     heading_style: title
-  - type: entities
-    title: cyd_orange
+    heading: Mining
+  - type: glance
+    show_name: true
+    show_state: true
     entities:
-      - type: attribute
-        entity: sensor.chta_worker_orange
-        attribute: bestShare
-        name: Best Share
-      - type: attribute
-        entity: sensor.chta_worker_orange
-        attribute: bestEver
-        name: Best Ever
-      - entity: sensor.chta_orange_last_seen
-        name: Last Update
-        format: relative
-  - type: entities
-    title: cyd_pink
+      - entity: sensor.chta_hashrate_5m
+        name: 5-minute
+      - entity: sensor.chta_hashrate_1h
+        name: 1-hour
+      - entity: sensor.chta_hashrate_24h
+        name: 24-hour
+      - entity: sensor.chta_hashrate_7d
+        name: 7-day
+  - type: history-graph
+    title: Hashrate history
+    hours_to_show: 12
     entities:
-      - type: attribute
-        entity: sensor.chta_worker_pink
-        attribute: bestShare
-        name: Best Share
-      - type: attribute
-        entity: sensor.chta_worker_pink
-        attribute: bestEver
-        name: Best Ever
-      - entity: sensor.chta_pink_last_seen
-        name: Last Update
-        format: relative
-  - type: tile
-    entity: sensor.chta_blocks_found
-    name: Blocks Found
-    icon: mdi:cube-outline
-    color: amber
+      - entity: sensor.chta_hashrate_5m
+        name: Current hashrate
