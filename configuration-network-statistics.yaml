@@ -1,0 +1,115 @@
+# Add this to your configuration.yaml 
+rest:
+# HeliosPool CHTA Network Statistics
+  - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=chta"
+    scan_interval: 600
+    sensor:
+      - name: "CHTA Coin"
+        unique_id: chta_network_coin
+        value_template: >
+          {{ value_json.coin | upper }}
+        icon: mdi:currency-usd
+
+      - name: "CHTA Network Difficulty"
+        unique_id: chta_network_difficulty
+        value_template: >
+          {{ value_json.difficulty_human }}
+        icon: mdi:gauge
+
+      - name: "CHTA Block Reward"
+        unique_id: chta_network_block_reward
+        value_template: >
+          {{ value_json.block_reward | float(0) | round(2) }}
+        unit_of_measurement: "CHTA"
+        icon: mdi:cube-outline
+
+      - name: "CHTA Reward USD"
+        unique_id: chta_network_reward_usd
+        value_template: >
+          {{ value_json.reward_usd | float(0) | round(8) }}
+        unit_of_measurement: "USD"
+        icon: mdi:cash
+
+      - name: "CHTA Price Change 24h"
+        unique_id: chta_network_price_change_24h
+        value_template: >
+          {{ value_json.price_change_24h | float(0) | round(2) }}
+        unit_of_measurement: "%"
+        icon: mdi:chart-line
+        state_class: measurement
+
+          # HeliosPool BCH Network Statistics
+  - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=bch"
+    scan_interval: 600
+    sensor:
+      - name: "Bitcoin Cash"
+        unique_id: bch_network_coin
+        value_template: >
+          {{ value_json.coin | upper }}
+        icon: mdi:currency-usd
+
+      - name: "BCH Network Difficulty"
+        unique_id: bch_network_difficulty
+        value_template: >
+          {{ value_json.difficulty_human }}
+        icon: mdi:gauge
+
+      - name: "BCH Block Reward"
+        unique_id: bch_network_block_reward
+        value_template: >
+          {{ value_json.block_reward | float(0) | round(2) }}
+        unit_of_measurement: "CHTA"
+        icon: mdi:cube-outline
+
+      - name: "BCH Reward USD"
+        unique_id: bch_network_reward_usd
+        value_template: >
+          {{ value_json.reward_usd | float(0) | round(2) }}
+        unit_of_measurement: "USD"
+        icon: mdi:cash
+
+      - name: "BCH Price Change 24h"
+        unique_id: bch_network_price_change_24h
+        value_template: >
+          {{ value_json.price_change_24h | float(0) | round(2) }}
+        unit_of_measurement: "%"
+        icon: mdi:chart-line
+        state_class: measurement
+
+          # HeliosPool BTC Network Statistics
+  - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=btc"
+    scan_interval: 600
+    sensor:
+      - name: "Bitcoin"
+        unique_id: btc_network_coin
+        value_template: >
+          {{ value_json.coin | upper }}
+        icon: mdi:currency-usd
+
+      - name: "BTC Network Difficulty"
+        unique_id: btc_network_difficulty
+        value_template: >
+          {{ value_json.difficulty_human }}
+        icon: mdi:gauge
+
+      - name: "BTC Block Reward"
+        unique_id: btc_network_block_reward
+        value_template: >
+          {{ value_json.block_reward | float(0) | round(2) }}
+        unit_of_measurement: "CHTA"
+        icon: mdi:cube-outline
+
+      - name: "BTC Reward USD"
+        unique_id: btc_network_reward_usd
+        value_template: >
+          {{ value_json.reward_usd | float(0) | round(2) }}
+        unit_of_measurement: "USD"
+        icon: mdi:cash
+
+      - name: "BTC Price Change 24h"
+        unique_id: btc_network_price_change_24h
+        value_template: >
+          {{ value_json.price_change_24h | float(0) | round(2) }}
+        unit_of_measurement: "%"
+        icon: mdi:chart-line
+        state_class: measurement
