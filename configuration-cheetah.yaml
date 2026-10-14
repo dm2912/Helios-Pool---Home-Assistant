@@ -1,0 +1,104 @@
+# For Cheetah coin add to your configuration.yaml
+# Change URL to your cheetah wallet
+# Change your workers to your actual cheetah workers
+
+rest:
+  - resource: "https://stats-chta.heliospool.com/api/users/CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt"
+    scan_interval: 60
+    sensor:
+      - name: "CHTA Hashrate 5m"
+        unique_id: chta_hashrate_5m
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate5m')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "CHTA Hashrate 1h"
+        unique_id: chta_hashrate_1h
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate1hr')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "CHTA Hashrate 24h"
+        unique_id: chta_hashrate_24h
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate1d')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "CHTA Hashrate 7d"
+        unique_id: chta_hashrate_7d
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate7d')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "CHTA Active Workers"
+        unique_id: chta_active_workers
+        value_template: >
+          {{ value_json.user.workers
+             | selectattr('hashrate5m', 'gt', 0)
+             | list | count }}
+
+      # Worker: cyd_orange
+      - name: "CHTA Worker Orange"
+        unique_id: chta_worker_orange
+        value_template: >
+          {% set w = value_json.user.workers
+             | selectattr('id', 'eq', 48593603)
+             | first | default(none) %}
+          {{ w.name if w is not none else 'unavailable' }}
+        json_attributes_path: "$.user.workers[?(@.id==48593603)]"
+        json_attributes:
+          - bestShare
+          - bestEver
+          - lastUpdate
+
+      # Worker: cyd_pink
+      - name: "CHTA Worker Pink"
+        unique_id: chta_worker_pink
+        value_template: >
+          {% set w = value_json.user.workers
+             | selectattr('id', 'eq', 48586726)
+             | first | default(none) %}
+          {{ w.name if w is not none else 'unavailable' }}
+        json_attributes_path: "$.user.workers[?(@.id==48586726)]"
+        json_attributes:
+          - bestShare
+          - bestEver
+          - lastUpdate
+
+
+      - name: "CHTA Blocks Found"
+        unique_id: chta_blocks_found
+        value_template: >
+          {{ value_json.get('blocks', [])
+             | selectattr('status', 'eq', 'confirmed')
+             | list | count }}
+        icon: mdi:cube-outline
+        state_class: measurement
+
+template:
+  - sensor:
+      - name: "CHTA Orange Last Seen"
+        unique_id: chta_orange_last_seen
+        device_class: timestamp
+        state: >
+          {{ state_attr('sensor.chta_worker_orange',
+                        'lastUpdate') | default(none, true) }}
+
+      - name: "CHTA Pink Last Seen"
+        unique_id: chta_pink_last_seen
+        device_class: timestamp
+        state: >
+          {{ state_attr('sensor.chta_worker_pink',
+                        'lastUpdate') | default(none, true) }}
