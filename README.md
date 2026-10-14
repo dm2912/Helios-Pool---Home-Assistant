@@ -9,7 +9,7 @@ CHEETAH COIN
 cheetah-configuration.yaml
 + put in your own wallet address on line 7
 + block starting at line 53, enter your own worker names and numeric id's. (See below)
-+ Add code from cheetah-configuration.yaml to your Home assistant configuration.yaml in the rest: section if you have one, or create a new rest: section
++ Add code from cheetah-configuration.yaml to your Home assistant configuration.yaml in the rest: section if you have one, or create a new rest: section. Note the entries to change the timestamp go under "templates"
 + RESTART HOME ASSISTANT
 + The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
 
