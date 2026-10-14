@@ -1,0 +1,82 @@
+>>This is just an example of what the api shares so you can see what other data can be parsed<<
+
+{
+    "user": {
+        "address": "CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt",
+        "createdAt": "2026-10-10T22:33:04.411Z",
+        "updatedAt": "2026-10-14T22:14:28.736Z",
+        "authorised": "1791649959",
+        "isActive": true,
+        "isPublic": true,
+        "lastActivatedAt": "2026-10-10T16:33:04.405Z",
+        "workers": [
+            {
+                "id": 48586726,
+                "name": "cyd_pink",
+                "createdAt": "2026-10-13T21:27:58.537Z",
+                "updatedAt": "2026-10-14T22:14:28.736Z",
+                "hashrate1m": 989000,
+                "hashrate5m": 981000,
+                "hashrate1hr": 937000,
+                "hashrate1d": 599000,
+                "hashrate7d": 128000,
+                "lastUpdate": "2026-10-14T22:13:46.000Z",
+                "shares": 19.37139999997888,
+                "bestShare": 0.05784188648912667,
+                "bestEver": 114.0836590790243,
+                "userAddress": "CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt",
+                "userAgent": "NerdMinerV2",
+                "userAgentRaw": "NerdMinerV2/V1.4.0",
+                "latestStats": {
+                    "id": "49153227",
+                    "workerId": 48586726,
+                    "hashrate1m": 989000,
+                    "hashrate5m": 981000,
+                    "hashrate1hr": 937000,
+                    "hashrate1d": 599000,
+                    "hashrate7d": 128000,
+                    "started": "1792014606",
+                    "shares": 19.37139999997888,
+                    "bestShare": 0.05784188648912667,
+                    "bestEver": 114.0836590790243,
+                    "timestamp": "2026-10-14T22:14:28.735Z"
+                },
+                "pools": [
+                    "eu-west"
+                ]
+            },
+            {
+                "id": 48593603,
+                "name": "cyd_orange",
+                "createdAt": "2026-10-13T21:46:02.401Z",
+                "updatedAt": "2026-10-14T22:14:28.736Z",
+                "hashrate1m": 933000,
+                "hashrate5m": 922000,
+                "hashrate1hr": 930000,
+                "hashrate1d": 595000,
+                "hashrate7d": 126000,
+                "lastUpdate": "2026-10-14T22:13:46.000Z",
+                "shares": 19.10089999997839,
+                "bestShare": 0.4080583776936958,
+                "bestEver": 180.6320599350424,
+                "userAddress": "CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt",
+                "userAgent": "NerdMinerV2",
+                "userAgentRaw": "NerdMinerV2/V1.4.0",
+                "latestStats": {
+                    "id": "49153225",
+                    "workerId": 48593603,
+                    "hashrate1m": 933000,
+                    "hashrate5m": 922000,
+                    "hashrate1hr": 930000,
+                    "hashrate1d": 595000,
+                    "hashrate7d": 126000,
+                    "started": "1792014867",
+                    "shares": 19.10089999997839,
+                    "bestShare": 0.4080583776936958,
+                    "bestEver": 180.6320599350424,
+                    "timestamp": "2026-10-14T22:14:28.735Z"
+                },
+                "pools": [
+                    "eu-west"
+                ]
+            },
