@@ -1,5 +1,7 @@
 >>This is just an example of what the api shares so you can see what other data can be parsed<<
 
+>> for user pages <<
+
 {
     "user": {
         "address": "CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt",
@@ -80,3 +82,40 @@
                     "eu-west"
                 ]
             },
+
+>> for network statistics <<
+
+{
+    "coin": "chta",
+    "difficulty": 5557940,
+    "difficulty_human": "5.56 M",
+    "block_height": 5173056,
+    "hashrate_hs": 172274445997454.4,
+    "hashrate_human": "172.3 TH\/s",
+    "last_block_time": 1792016366,
+    "blocktime_s": null,
+    "block_reward": 625,
+    "price_usd": 4.0586e-6,
+    "price_human": "$0.000004",
+    "reward_usd": 0.0025366250000000003,
+    "price_change_24h": -0.35,
+    "fetched_at": 1792016407,
+    "sources": {
+        "chain": {
+            "last_ok": 1792016407,
+            "fails": 0
+        },
+        "hashrate": {
+            "last_ok": 1792016407,
+            "fails": 0
+        },
+        "market": {
+            "last_ok": 1792016407,
+            "fails": 0
+        },
+        "reward": {
+            "last_ok": 1792016407,
+            "fails": 0
+        }
+    }
+}
