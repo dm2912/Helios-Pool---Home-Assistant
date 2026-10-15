@@ -26,12 +26,12 @@ DEFINE YOUR WORKERS:
 
 + The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
 
-GETTING WORKER ID and NAMES
----------------------------
+GETTING WORKER IDs
+------------------
 
 You can get your worker id's etc by going to the heliospool page, for instance https://stats-chta.heliospool.com/users/CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt in google chrome, then F12 to bring up the inspector. Select the Network tab, Fetch/XHR, RELOAD THE PAGE, and then viewing one of the entries with your wallet code. 
 
-<img width="1129" height="654" alt="Screenshot_20261016_000425" src="https://github.com/user-attachments/assets/25f04fe4-5b02-4a10-b3ac-60456825a355" />
+<img width="1136" height="792" alt="Screenshot_20261016_000802" src="https://github.com/user-attachments/assets/e086d159-6537-4b71-8ef4-0d67963f5436" />
 
 OTHER DATA THAT CAN BE SCRAPED
 ------------------------------
