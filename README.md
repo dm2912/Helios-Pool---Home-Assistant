@@ -26,6 +26,10 @@ DEFINE YOUR WORKERS:
 
 + The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
 
+Bear in mind that in the third dashboard which is your workers, you will have to adjust it to reflect your worker names. 
+
+<img width="1102" height="554" alt="Screenshot_20261016_001012" src="https://github.com/user-attachments/assets/7b821f15-8fa1-4ad4-824a-d37d1ce4ff65" />
+
 GETTING WORKER IDs
 ------------------
 
