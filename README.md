@@ -6,7 +6,7 @@ So far only done for Cheetah
 
 ALL COINS
 ---------
-Edit secrets.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin and Bitcoin Cash. Copy the relevant code into your own Home assistant secrets.yaml
+Edit secrets.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin and Bitcoin Cash. Copy the relevant code into your own Home assistant secrets.yaml found in the Home Assistant Config directory. 
 
 CHEETAH COIN
 ------------
