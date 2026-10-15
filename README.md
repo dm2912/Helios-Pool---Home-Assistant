@@ -18,7 +18,9 @@ DEFINE YOUR WORKERS:
 
 <img width="698" height="372" alt="Screenshot_20261015_235119" src="https://github.com/user-attachments/assets/e38eb218-3a43-4f8c-b17d-c65fe679a835" />
 
-+ Add code from cheetah-configuration.yaml to your Home assistant configuration.yaml in the rest: section if you have one, or create a new rest: section. Note the entries to change the timestamp go under "templates"
++ Copy the code from cheetah-configuration.yaml to your **Home assistant configuration.yaml** in the rest: section if you have one, or create a new rest: section. Note the entries to change the timestamp go under "templates"
+
+**NOTE: IF YOU ARE ADDING MULTIPLE TEMPLATES TO YOUR CONFIGURATION.YAML ENSURE YOU SEPARATE THE "REST" AND "TEMPLATES" SECTIONS**
   
 + RESTART HOME ASSISTANT
 
