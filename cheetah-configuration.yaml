@@ -62,7 +62,7 @@ rest:
         icon: mdi:cube-outline
         state_class: measurement
       
-      # DEFINTE YOUR WORKER(S)  
+      # DEFINE YOUR WORKER(S)  
       
       # Worker 1: get your own worker ID from the json
       - name: "CHTA Worker Orange"
@@ -132,6 +132,7 @@ rest:
         state_class: measurement
         
 # converting timestamps for last seed to "x minutes ago" instead of time and date, again, edit in your own workers. 
+
 # >> This goes in a seperate "template" section <<
 
 template:
