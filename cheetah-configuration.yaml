@@ -6,8 +6,8 @@
 rest:
 
 # Fetching your personal Helios Pool stats and workers
-  - resource: "https://stats-chta.heliospool.com/api/users/CGrADAcqKbEcmmPksJ5ExxU53GuBURmLCt"
-# Edit the above line with your own wallet address
+   - resource: !secret chta_api_url
+
     scan_interval: 60
     sensor:
       - name: "CHTA Hashrate 5m"
@@ -61,7 +61,9 @@ rest:
              | list | count }}
         icon: mdi:cube-outline
         state_class: measurement
-        
+      
+      # DEFINTE YOUR WORKER(S)  
+      
       # Worker 1: get your own worker ID from the json
       - name: "CHTA Worker Orange"
         unique_id: chta_worker_orange
