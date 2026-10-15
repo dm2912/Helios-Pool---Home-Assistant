@@ -11,10 +11,17 @@ Edit secrets.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin 
 CHEETAH COIN
 ------------
 cheetah-configuration.yaml
-+ define your workers. block starting at line 53, enter your own worker names and numeric id's. (See below)
+
+DEFINE YOUR WORKERS:
+
++ block starting at line 53, enter your own worker names and numeric id's. (See below). The name and ID on lines 68 and 69. And the numeric worker id's on lines 72 and 75
+
+<img width="698" height="372" alt="Screenshot_20261015_235119" src="https://github.com/user-attachments/assets/e38eb218-3a43-4f8c-b17d-c65fe679a835" />
+
 + Add code from cheetah-configuration.yaml to your Home assistant configuration.yaml in the rest: section if you have one, or create a new rest: section. Note the entries to change the timestamp go under "templates"
-+ copy the code into your configuration.yaml in home assistant
+  
 + RESTART HOME ASSISTANT
+
 + The three dashboard files cheetah-1, cheetah-2 and cheetah-3 contain the yaml for dashboard entries. 
 
 GETTING WORKER ID's
@@ -24,6 +31,8 @@ You can get your worker id's etc by going to the heliospool page, for instance h
 
 <img width="1623" height="684" alt="Screenshot_20261014_180114" src="https://github.com/user-attachments/assets/c8eccccd-16cb-483a-9557-6fa550111eed" />
 
+OTHER DATA THAT CAN BE SCRAPED
+------------------------------
 See also the example-helios-data.json file, which shows clearly what data the api gives
 
 NOTE: Initial guidance on how to grab the data from heliospool and build the cards was assisted by ChatGPT. The rest is me
