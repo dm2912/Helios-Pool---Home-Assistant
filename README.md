@@ -1,15 +1,15 @@
-Home assistant dashboard panels to take data from Helios Pool and then display on dashboard panels.
+Home Assistant dashboards and REST sensors for monitoring Helios Pool cryptocurrency mining statistics.
 
 So far only done for Cheetah
 
 <img width="1530" height="703" alt="Screenshot_20261014_203001" src="https://github.com/user-attachments/assets/2c5b2840-365c-4e0f-9540-37327b1b1c87" />
 
-ALL COINS
----------
+STEP 1. ALL COINS
+-----------------
 Edit secrets.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin and Bitcoin Cash. Copy the relevant code into your own Home assistant secrets.yaml found in the Home Assistant Config directory. 
 
-CHEETAH COIN
-------------
+STEP 2. CHEETAH COIN
+--------------------
 cheetah-configuration.yaml
 
 DEFINE YOUR WORKERS:
