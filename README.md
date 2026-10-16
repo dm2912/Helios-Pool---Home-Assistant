@@ -47,4 +47,4 @@ OTHER DATA THAT CAN BE SCRAPED
 ------------------------------
 See also the example-helios-data.json file, which shows clearly what data the api gives
 
-NOTE: Initial guidance on how to grab the data from heliospool and build the cards was assisted by ChatGPT. The rest is me
+note: Chatgpt was used to get me familiar grabbing from the json for cheetah and for debugging, after that it was me.
