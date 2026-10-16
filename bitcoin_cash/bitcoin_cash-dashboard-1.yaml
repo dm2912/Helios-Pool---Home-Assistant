@@ -1,0 +1,38 @@
+type: vertical-stack
+cards:
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading: Network Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.bch_coin
+            name: Coin
+            icon: mdi:currency-usd
+          - entity: sensor.bch_network_difficulty
+            name: Network Difficulty
+            icon: mdi:gauge
+          - entity: sensor.bch_block_reward
+            name: Block Reward
+            icon: mdi:cube-outline
+          - entity: sensor.bch_reward_usd
+            name: Reward USD
+            icon: mdi:cash
+          - entity: sensor.bch_price_change_24h
+            name: Price Change (24h)
+            icon: mdi:chart-line
+      - type: heading
+        heading: My Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.bch_active_workers
+            name: Active Workers
+            icon: mdi:chip
+          - entity: sensor.bch_blocks_found
+            name: Blocks Found
+            icon: mdi:cube-outline
+            color: amber
