@@ -1,6 +1,6 @@
 Home Assistant dashboards and REST sensors for monitoring Helios Pool cryptocurrency mining statistics.
 
-So far only done for Cheetah
+Supports Cheetah, Digibyte, Bitcoin and Bitcoin Cash
 
 <img width="1530" height="703" alt="Screenshot_20261014_203001" src="https://github.com/user-attachments/assets/2c5b2840-365c-4e0f-9540-37327b1b1c87" />
 
