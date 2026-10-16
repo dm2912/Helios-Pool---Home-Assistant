@@ -1,13 +1,14 @@
-# For Cheetah coin add to your configuration.yaml
-# Change URL to your cheetah wallet
-# Change your workers to your actual cheetah workers
+# Cheetah (CHTA) — Home Assistant configuration
+# Add these entries to configuration.yaml. If rest: or template: already exists,
+# merge the entries into those sections rather than duplicating the keys.
+# Set chta_api_url in secrets.yaml to your wallet API URL.
+# Worker IDs below are examples, dont forget to use your own.
 
 # >> If you already have a "rest" section then place this next part there <<
 rest:
 
-# Fetching your personal Helios Pool stats and workers
-   - resource: !secret chta_api_url
-
+# Fetching your personal Helios Pool stats and workers for Cheetah (refreshes every 60 seconds)
+  - resource: !secret chta_api_url
     scan_interval: 60
     sensor:
       - name: "CHTA Hashrate 5m"
@@ -61,10 +62,10 @@ rest:
              | list | count }}
         icon: mdi:cube-outline
         state_class: measurement
-      
-      # DEFINE YOUR WORKER(S)  
-      
-      # Worker 1: get your own worker ID from the json
+
+      # DEFINE YOUR WORKER(S)
+
+      # Worker 1: replace the ID in both locations for another worker
       - name: "CHTA Worker One"
         unique_id: chta_worker_one
         value_template: >
@@ -78,7 +79,7 @@ rest:
           - bestEver
           - lastUpdate
 
-      # Worker 2: get your own worker id from the json
+      # Worker 2: replace the ID in both locations for another worker
       - name: "CHTA Worker Two"
         unique_id: chta_worker_two
         value_template: >
@@ -92,8 +93,8 @@ rest:
           - bestEver
           - lastUpdate
 
-# Fetching the global HeliosPool CHTA Network Statistics
-         
+# Fetching the global HeliosPool CHTA Network Statistics (updates every 10 minutes)
+
   - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=chta"
     scan_interval: 600
     sensor:
@@ -130,10 +131,10 @@ rest:
         unit_of_measurement: "%"
         icon: mdi:chart-line
         state_class: measurement
-        
-# converting timestamps for last seed to "x minutes ago" instead of time and date, again, edit in your own workers. 
 
 # >> This goes in a seperate "template" section <<
+
+# Timestamp sensors: use format: relative in the dashboard to show "x minutes ago".
 
 template:
   - sensor:
