@@ -1,0 +1,34 @@
+# edit with your own workers
+type: vertical-stack
+cards:
+  - type: heading
+    heading: Workers
+    heading_style: title
+  - type: entities
+    title: Worker One
+    entities:
+      - type: attribute
+        entity: sensor.btc_worker_one
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.btc_worker_one
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.btc_worker_one_last_seen
+        name: Last Update
+        format: relative
+  - type: entities
+    title: Worker Two
+    entities:
+      - type: attribute
+        entity: sensor.btc_worker_two
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.btc_worker_two
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.btc_worker_two_last_seen
+        name: Last Update
+        format: relative

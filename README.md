@@ -14,7 +14,7 @@ cheetah-configuration.yaml
 
 DEFINE YOUR WORKERS:
 
-+ block starting at line 53, enter your own worker names and numeric id's. (See below). The name and ID on lines 68 and 69. And the numeric worker id's on lines 72 and 75
++ block starting at line 66, enter your own worker names and numeric id's. (See below). The name and ID on lines 73 and 76. And the numeric worker id's on lines 87 and 90. If you have more than two workers you can just copy/paste those blocks and remember to also add the later template blocks to convert the timestamps
 
 <img width="698" height="372" alt="Screenshot_20261015_235119" src="https://github.com/user-attachments/assets/e38eb218-3a43-4f8c-b17d-c65fe679a835" />
 
@@ -29,6 +29,12 @@ DEFINE YOUR WORKERS:
 Bear in mind that in the third dashboard which is your workers, you will have to adjust it to reflect your worker names. 
 
 <img width="1102" height="554" alt="Screenshot_20261016_001012" src="https://github.com/user-attachments/assets/7b821f15-8fa1-4ad4-824a-d37d1ce4ff65" />
+
+
+STEP 2/3. OTHER COINS
+---------------------
+
+The process is exactly the same as with Cheetah Coin just using the other templates.
 
 GETTING WORKER IDs
 ------------------
