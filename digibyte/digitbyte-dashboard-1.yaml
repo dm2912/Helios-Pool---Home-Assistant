@@ -1,0 +1,38 @@
+type: vertical-stack
+cards:
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading: Network Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.dgb_coin
+            name: Coin
+            icon: mdi:currency-usd
+          - entity: sensor.dgb_network_difficulty
+            name: Network Difficulty
+            icon: mdi:gauge
+          - entity: sensor.dgb_block_reward
+            name: Block Reward
+            icon: mdi:cube-outline
+          - entity: sensor.dgb_reward_usd
+            name: Reward USD
+            icon: mdi:cash
+          - entity: sensor.dgb_price_change_24h
+            name: Price Change (24h)
+            icon: mdi:chart-line
+      - type: heading
+        heading: My Statistics
+        heading_style: title
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.dgb_active_workers
+            name: Active Workers
+            icon: mdi:chip
+          - entity: sensor.dgb_blocks_found
+            name: Blocks Found
+            icon: mdi:cube-outline
+            color: amber

@@ -1,0 +1,23 @@
+type: vertical-stack
+cards:
+  - type: heading
+    heading_style: title
+    heading: Mining
+  - type: glance
+    show_name: true
+    show_state: true
+    entities:
+      - entity: sensor.dgb_hashrate_5m
+        name: 5-minute
+      - entity: sensor.dgb_hashrate_1h
+        name: 1-hour
+      - entity: sensor.dgb_hashrate_24h
+        name: 24-hour
+      - entity: sensor.dgb_hashrate_7d
+        name: 7-day
+  - type: history-graph
+    title: Hashrate history
+    hours_to_show: 24
+    entities:
+      - entity: sensor.dgb_hashrate_5m
+        name: Current hashrate

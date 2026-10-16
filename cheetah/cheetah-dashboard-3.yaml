@@ -5,30 +5,30 @@ cards:
     heading: Workers
     heading_style: title
   - type: entities
-    title: cyd_orange
+    title: chta_worker_one
     entities:
       - type: attribute
-        entity: sensor.chta_worker_orange
+        entity: sensor.chta_worker_one
         attribute: bestShare
         name: Best Share
       - type: attribute
-        entity: sensor.chta_worker_orange
+        entity: sensor.chta_worker_one
         attribute: bestEver
         name: Best Ever
-      - entity: sensor.chta_orange_last_seen
+      - entity: sensor.chta_worker_one_last_seen
         name: Last Update
         format: relative
   - type: entities
-    title: cyd_pink
+    title: chta_worker_two
     entities:
       - type: attribute
-        entity: sensor.chta_worker_pink
+        entity: sensor.chta_worker_two
         attribute: bestShare
         name: Best Share
       - type: attribute
-        entity: sensor.chta_worker_pink
+        entity: sensor.chta_worker_two
         attribute: bestEver
         name: Best Ever
-      - entity: sensor.chta_pink_last_seen
+      - entity: sensor.chta_worker_two_last_seen
         name: Last Update
         format: relative

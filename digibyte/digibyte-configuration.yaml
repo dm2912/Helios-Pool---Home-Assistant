@@ -1,0 +1,152 @@
+# For Cheetah coin add to your configuration.yaml
+# Change URL to your cheetah wallet
+# Change your workers to your actual cheetah workers
+
+# >> If you already have a "rest" section then place this next part there <<
+rest:
+
+# Fetching your personal Helios Pool stats and workers
+   - resource: !secret dgb_api_url
+
+    scan_interval: 60
+    sensor:
+      - name: "DGB Hashrate 5m"
+        unique_id: dgb_hashrate_5m
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate5m')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "DGB Hashrate 1h"
+        unique_id: dgb_hashrate_1h
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate1hr')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "DGB Hashrate 24h"
+        unique_id: dgb_hashrate_24h
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate1d')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "DGB Hashrate 7d"
+        unique_id: dgb_hashrate_7d
+        value_template: >
+          {{ (value_json.user.workers
+             | map(attribute='hashrate7d')
+             | sum / 1000000) | round(3) }}
+        unit_of_measurement: "MH/s"
+        state_class: measurement
+
+      - name: "DGB Active Workers"
+        unique_id: dgb_active_workers
+        value_template: >
+          {{ value_json.user.workers
+             | selectattr('hashrate5m', 'gt', 0)
+             | list | count }}
+
+      - name: "DGB Blocks Found"
+        unique_id: dgb_blocks_found
+        value_template: >
+          {{ value_json.get('blocks', [])
+             | selectattr('status', 'eq', 'confirmed')
+             | list | count }}
+        icon: mdi:cube-outline
+        state_class: measurement
+      
+      # DEFINE YOUR WORKER(S)  
+      
+      # Worker 1: get your own worker ID from the json
+      - name: "DGB Worker One"
+        unique_id: dgb_worker_one
+        value_template: >
+          {% set w = value_json.user.workers
+             | selectattr('id', 'eq', 48593603)
+             | first | default(none) %}
+          {{ w.name if w is not none else 'unavailable' }}
+        json_attributes_path: "$.user.workers[?(@.id==48593603)]"
+        json_attributes:
+          - bestShare
+          - bestEver
+          - lastUpdate
+
+      # Worker 2: get your own worker id from the json
+      - name: "DGB Worker Two"
+        unique_id: dgb_worker_two
+        value_template: >
+          {% set w = value_json.user.workers
+             | selectattr('id', 'eq', 48586726)
+             | first | default(none) %}
+          {{ w.name if w is not none else 'unavailable' }}
+        json_attributes_path: "$.user.workers[?(@.id==48586726)]"
+        json_attributes:
+          - bestShare
+          - bestEver
+          - lastUpdate
+
+# Fetching the global HeliosPool DGB Network Statistics
+         
+  - resource: "https://heliospool.com/wp-json/heliospool/v1/network?coin=dgb"
+    scan_interval: 600
+    sensor:
+      - name: "DGB Coin"
+        unique_id: dgb_network_coin
+        value_template: >
+          {{ value_json.coin | upper }}
+        icon: mdi:currency-usd
+
+      - name: "DGB Network Difficulty"
+        unique_id: dgb_network_difficulty
+        value_template: >
+          {{ value_json.difficulty_human }}
+        icon: mdi:gauge
+
+      - name: "DGB Block Reward"
+        unique_id: dgb_network_block_reward
+        value_template: >
+          {{ value_json.block_reward | float(0) | round(2) }}
+        unit_of_measurement: "DGB"
+        icon: mdi:cube-outline
+
+      - name: "DGB Reward USD"
+        unique_id: dgb_network_reward_usd
+        value_template: >
+          {{ value_json.reward_usd | float(0) | round(8) }}
+        unit_of_measurement: "USD"
+        icon: mdi:cash
+
+      - name: "DGB Price Change 24h"
+        unique_id: dgb_network_price_change_24h
+        value_template: >
+          {{ value_json.price_change_24h | float(0) | round(2) }}
+        unit_of_measurement: "%"
+        icon: mdi:chart-line
+        state_class: measurement
+        
+# converting timestamps for last seed to "x minutes ago" instead of time and date, again, edit in your own workers. 
+
+# >> This goes in a seperate "template" section <<
+
+template:
+  - sensor:
+      - name: "DGB Worker One Last Seen"
+        unique_id: dgb_worker_one_last_seen
+        device_class: timestamp
+        state: >
+          {{ state_attr('sensor.dgb_worker_one',
+                        'lastUpdate') | default(none, true) }}
+
+      - name: "DGB Worker Two Last Seen"
+        unique_id: dgb_worker_two_last_seen
+        device_class: timestamp
+        state: >
+          {{ state_attr('sensor.dgb_worker_two',
+                        'lastUpdate') | default(none, true) }}

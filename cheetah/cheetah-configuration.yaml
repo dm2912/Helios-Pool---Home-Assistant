@@ -65,8 +65,8 @@ rest:
       # DEFINE YOUR WORKER(S)  
       
       # Worker 1: get your own worker ID from the json
-      - name: "CHTA Worker Orange"
-        unique_id: chta_worker_orange
+      - name: "CHTA Worker One"
+        unique_id: chta_worker_one
         value_template: >
           {% set w = value_json.user.workers
              | selectattr('id', 'eq', 48593603)
@@ -79,8 +79,8 @@ rest:
           - lastUpdate
 
       # Worker 2: get your own worker id from the json
-      - name: "CHTA Worker Pink"
-        unique_id: chta_worker_pink
+      - name: "CHTA Worker Two"
+        unique_id: chta_worker_two
         value_template: >
           {% set w = value_json.user.workers
              | selectattr('id', 'eq', 48586726)
@@ -137,16 +137,16 @@ rest:
 
 template:
   - sensor:
-      - name: "CHTA Orange Last Seen"
-        unique_id: chta_orange_last_seen
+      - name: "CHTA Worker One Last Seen"
+        unique_id: chta_worker_one_last_seen
         device_class: timestamp
         state: >
-          {{ state_attr('sensor.chta_worker_orange',
+          {{ state_attr('sensor.chta_worker_one',
                         'lastUpdate') | default(none, true) }}
 
-      - name: "CHTA Pink Last Seen"
-        unique_id: chta_pink_last_seen
+      - name: "CHTA Worker Two Last Seen"
+        unique_id: chta_worker_two_last_seen
         device_class: timestamp
         state: >
-          {{ state_attr('sensor.chta_worker_pink',
+          {{ state_attr('sensor.chta_worker_two',
                         'lastUpdate') | default(none, true) }}

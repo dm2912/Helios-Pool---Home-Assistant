@@ -1,0 +1,34 @@
+# edit with your own workers
+type: vertical-stack
+cards:
+  - type: heading
+    heading: Workers
+    heading_style: title
+  - type: entities
+    title: dgb_worker_one
+    entities:
+      - type: attribute
+        entity: sensor.dgb_worker_one
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.dgb_worker_one
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.dgb_worker_one_last_seen
+        name: Last Update
+        format: relative
+  - type: entities
+    title: dgb_worker_two
+    entities:
+      - type: attribute
+        entity: sensor.dgb_worker_two
+        attribute: bestShare
+        name: Best Share
+      - type: attribute
+        entity: sensor.dgb_worker_two
+        attribute: bestEver
+        name: Best Ever
+      - entity: sensor.dgb_worker_two_last_seen
+        name: Last Update
+        format: relative
