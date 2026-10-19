@@ -6,7 +6,16 @@ Supports Cheetah, Digibyte, Bitcoin and Bitcoin Cash
 
 STEP 1. ALL COINS
 -----------------
-Edit secrets.example.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin and Bitcoin Cash. Copy the relevant code into your own Home assistant secrets.yaml found in the Home Assistant Config directory. 
++ Edit secrets.example.yaml with your own wallet addresses for Cheetah, Digibyte, Bitcoin and Bitcoin Cash. Copy the relevant code into your own Home assistant secrets.yaml found in the Home Assistant Config directory. 
+
++ Create a folder called "packages" in your config directory
+
++ add the following line to your configuration.yaml
+
+'''homeassistant:
+  packages: !include_dir_named packages'''
+  
+Note that the packages line should be indented with two spaces. place the code under the existing "homeassistant" line, do not create a new one
 
 STEP 2. CHEETAH COIN
 --------------------
@@ -18,9 +27,11 @@ DEFINE YOUR WORKERS:
 
 <img width="698" height="372" alt="Screenshot_20261015_235119" src="https://github.com/user-attachments/assets/e38eb218-3a43-4f8c-b17d-c65fe679a835" />
 
-+ Copy the code from cheetah-configuration.yaml to your **Home assistant configuration.yaml** in the rest: section if you have one, or create a new rest: section. Note the entries to change the timestamp go under "templates"
++ drop the cheetah_configuration.yaml file into your newly created /config/packages directory
 
 **NOTE: IF YOU ARE ADDING MULTIPLE TEMPLATES TO YOUR CONFIGURATION.YAML ENSURE YOU SEPARATE THE "REST" AND "TEMPLATES" SECTIONS**
+
+* In home assistant go to settings > Tools and then check configuration
   
 + RESTART HOME ASSISTANT
 
