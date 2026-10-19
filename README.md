@@ -13,6 +13,7 @@ STEP 1. ALL COINS
 + add the following line to your configuration.yaml
 
 homeassistant:
+
   packages: !include_dir_named packages
   
 Note that the packages line should be indented with two spaces. place the code under the existing "homeassistant" line, do not create a new one
