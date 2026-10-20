@@ -1,0 +1,4 @@
+# Add this line to your home assistant configuration.yaml
+
+homeassistant:
+  packages: !include_dir_named packages

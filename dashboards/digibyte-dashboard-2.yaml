@@ -1,0 +1,77 @@
+type: vertical-stack
+cards:
+  - type: heading
+    heading_style: title
+    heading: Mining
+  - type: glance
+    show_name: true
+    show_state: true
+    entities:
+      - entity: sensor.dgb_hashrate_5m
+        name: 5-minute
+      - entity: sensor.dgb_hashrate_1h
+        name: 1-hour
+      - entity: sensor.dgb_hashrate_24h
+        name: 24-hour
+      - entity: sensor.dgb_hashrate_7d
+        name: 7-day
+  - type: history-graph
+    title: Hashrate history
+    hours_to_show: 24
+    entities:
+      - entity: sensor.dgb_hashrate_5m
+        name: Current hashrate
+
+
+template:
+  - binary_sensor:
+      - name: "Miner 51 Firmware Update Available"
+        unique_id: miner_51_firmware_update_available
+        icon: mdi:update
+        availability: >
+          {{ states('sensor.miner_51_firmware_version')
+             not in ['unknown', 'unavailable', '']
+             and states('sensor.nerdminer_latest_firmware')
+             not in ['unknown', 'unavailable', ''] }}
+        state: >
+          {% set installed =
+             states('sensor.miner_51_firmware_version')
+             | lower | regex_replace('^v', '') %}
+          {% set latest =
+             states('sensor.nerdminer_latest_firmware')
+             | lower | regex_replace('^v', '') %}
+          {{ version(installed) < version(latest) }}
+
+      - name: "Miner 52 Firmware Update Available"
+        unique_id: miner_52_firmware_update_available
+        icon: mdi:update
+        availability: >
+          {{ states('sensor.miner_52_firmware_version')
+             not in ['unknown', 'unavailable', '']
+             and states('sensor.nerdminer_latest_firmware')
+             not in ['unknown', 'unavailable', ''] }}
+        state: >
+          {% set installed =
+             states('sensor.miner_52_firmware_version')
+             | lower | regex_replace('^v', '') %}
+          {% set latest =
+             states('sensor.nerdminer_latest_firmware')
+             | lower | regex_replace('^v', '') %}
+          {{ version(installed) < version(latest) }}
+
+      - name: "Miner 53 Firmware Update Available"
+        unique_id: miner_53_firmware_update_available
+        icon: mdi:update
+        availability: >
+          {{ states('sensor.miner_53_firmware_version')
+             not in ['unknown', 'unavailable', '']
+             and states('sensor.nerdminer_latest_firmware')
+             not in ['unknown', 'unavailable', ''] }}
+        state: >
+          {% set installed =
+             states('sensor.miner_53_firmware_version')
+             | lower | regex_replace('^v', '') %}
+          {% set latest =
+             states('sensor.nerdminer_latest_firmware')
+             | lower | regex_replace('^v', '') %}
+          {{ version(installed) < version(latest) }}
